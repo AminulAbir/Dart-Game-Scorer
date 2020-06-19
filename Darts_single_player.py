@@ -154,6 +154,7 @@ if __name__ == "__main__":
     total3 = 1000
     total4 = 1000
     counts = 0
+    rate = 0.0
 
     print(f'\nWelcome {player1} in Darts World.')
     print("Let's begin our play\n")
@@ -161,6 +162,7 @@ if __name__ == "__main__":
     while True:
         print('\nRequired Score = ', total1)
         print(f"Attempts = {counts}")
+        print('Rate = ', rate)
 
         if total1 <= 180:
             print('\nRecommended Shots: \n')
@@ -345,9 +347,11 @@ if __name__ == "__main__":
                 pass
 
         counts += 1
+        rate = (501-total1)/counts
         total3 = 1000
         total4 = 1000
 
         if total1 == 0:
             print(f'\n{player1} scores 501 in {counts} attempts!!!')
+            print(f'Rate: {rate}')
             break
